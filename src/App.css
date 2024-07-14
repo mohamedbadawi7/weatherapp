@@ -1,38 +1,203 @@
 .App {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+}
+
+.title-container {
+  text-align: center; /* Center-align the title */
+  margin-top: 50px; /* Space above the title */
+}
+
+.title {
+  font-size: 4rem; /* Large font size for a bold title */
+  font-weight: 700; /* Bold font weight */
+  color: #333; /* Dark color for contrast */
+  text-transform: uppercase; /* Uppercase text for a clean look */
+  letter-spacing: 2px; /* Increase letter spacing for modern feel */
+  margin: 0; /* Remove default margin */
+  position: relative; /* Position for pseudo-element */
+}
+
+.title::before {
+  content: ''; /* Empty content for the underline effect */
+  position: absolute;
+  left: 0;
+  bottom: -10px; /* Position the underline below the text */
+  width: 100%;
+  height: 4px; /* Thickness of the underline */
+  background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient underline */
+  border-radius: 2px; /* Rounded corners for the underline */
+}
+
+.title:hover {
+  color: #007bff; /* Change text color on hover */
+  transform: translateY(-5px); /* Slight lift on hover */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.title-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.title-gradient {
+  background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient text */
+  -webkit-background-clip: text; /* Clip the background to text */
+  -webkit-text-fill-color: transparent; /* Make text color transparent to show gradient */
+}
+
+.search {
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px; /* Rounded left corners */
+  font-size: 16px;
+  outline: none;
+}
+
+.search button {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 0 8px 8px 0; /* Rounded right corners */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0056b3, #007bff); /* Hover gradient */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button:active {
+  background: #004080; /* Darker background on click */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Click shadow */
+}
+
+.weather {
+  margin: 20px 0;
+}
+
+/* .weather img {
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+  margin: 10px auto;
+} */
+
+
+
+.forecast {
+  /* display: flex; */
+  flex-wrap: wrap;
+  gap: 20px;
+  /* margin: 20px 0; */
+}
+
+.forecast-item img {
+  width: 64px; /* Adjust size as needed */
+  height: 64px;
+  vertical-align: middle; /* Align with text */
+  margin: 10px 0;
+}
+
+.forecast-item {
+  background: #fff;
+  display: inline-block;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1 1 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.forecast-item:hover {
+  background-color: #7b7d80;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.city-title-container {
+  text-align: center; /* Center-align the city title */
+  margin-top: 20px; /* Space above the title */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.city-title {
+  font-size: 3rem; /* Large font size for prominence */
+  font-weight: 600; /* Slightly bold font weight */
+  color: #333; /* Dark color for contrast */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  letter-spacing: 1px; /* Slightly increased letter spacing */
+  margin: 0; /* Remove default margin */
+  position: relative; /* Position for pseudo-element */
+}
+
+.city-title::after {
+  content: ''; /* Empty content for the underline effect */
+  position: absolute;
+  left: 0;
+  bottom: -8px; /* Position the underline below the text */
+  width: 100%;
+  height: 3px; /* Thickness of the underline */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient underline */
+  border-radius: 2px; /* Rounded corners for the underline */
+}
+
+.city-title:hover {
+  color: #ff7e5f; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.city-title-shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.city-title-gradient {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient text */
+  -webkit-background-clip: text; /* Clip the background to text */
+  -webkit-text-fill-color: transparent; /* Make text color transparent to show gradient */
+}
+
+.weather-info {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px; /* Space between elements */
+  margin-top: 20px; /* Space above the weather info */
 }
 
-.App-link {
-  color: #61dafb;
+.weather img {
+  font-size: 2.5rem; /* Size of the weather icon */
+  color: #007bff; /* Color of the weather icon */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.temperature {
+  font-size: 2rem; /* Size of the temperature */
+  font-weight: 700; /* Bold temperature */
+  color: #333; /* Color of the temperature */
+}
+
+.description {
+  font-size: 1.2rem; /* Size of the weather description */
+  color: #666; /* Color of the weather description */
 }
