@@ -201,3 +201,22 @@ button:active {
   font-size: 1.2rem; /* Size of the weather description */
   color: #666; /* Color of the weather description */
 }
+
+.forecast-item {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.hourly-forecast {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.hourly-item {
+  display: flex;
+  align-items: center;
+}
+
+.hourly-item p {
+  margin: 0 10px;
+}
